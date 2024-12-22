@@ -11,4 +11,5 @@ public class ParcourirTableau implements ParcourirTableau2D{
             System.out.println();
         }
     }
+
 }

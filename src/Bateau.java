@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Bateau {
     private String nom;
     private int pvBateau;
@@ -18,10 +20,20 @@ public class Bateau {
     public void setPvBateau(int pvBateau) {this.pvBateau = pvBateau;}
 
     public int[] getPositionX() {return positionX;}
-
     public void setPositionX(int[] positionX) {this.positionX = positionX;}
 
     public int[] getPositionY() {return positionY;}
-
     public void setPositionY(int[] positionY) {this.positionY = positionY;}
+
+    public boolean estTouche(int tirex, int tirey){
+        for (int i = 0; i < positionX.length; i++) {
+            for (int j = 0; j < positionY.length; j++) {
+                if(positionX[i] == tirex && positionY[i] == tirey){
+                    pvBateau -= 1;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
